@@ -30,6 +30,7 @@ export const Container = styled.header`
     }
 
     .logo-icon {
+        display: flex;
         img {
             width: 170px;
             heigth: 41px;
