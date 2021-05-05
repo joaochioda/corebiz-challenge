@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-   margin-bottom: 100px;
    .slick-dots li.slick-active button:before {
        color: red;
    }

@@ -9,7 +9,8 @@ const theme = {
     darkGrey: "#7A7A7A",
     placeHolderGrey: "#7A7A7A",
     white: "#FFFFFF",
-    red: '#F8475F'
+    red: '#F8475F',
+    third: '##333333'
   },
   fonts: ["Nunito", "RoboLatoto"],
   fontSizes: {
