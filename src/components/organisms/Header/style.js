@@ -32,6 +32,7 @@ export const Container = styled.header`
     .logo-icon {
         display: flex;
         img {
+            cursor: pointer;
             width: 170px;
             heigth: 41px;
         }
@@ -43,6 +44,9 @@ export const Container = styled.header`
     }
 
     .shop {
+        img {
+            cursor: pointer;
+        }
         display: flex;
         @media(max-width: 800px) {
             padding-right: 20px;

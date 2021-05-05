@@ -6,8 +6,17 @@ const layout = {
     labelCol: { span: 8 },
     wrapperCol: { span: 16 },
 };
-const tailLayout = {
-wrapperCol: { offset: 8, span: 16 },
+
+function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+const placeValidator = (_, value) => {
+    if (value === '' || !validateEmail(value)) {
+        return Promise.reject('Preencha com um e-mail válido');
+    }
+    return Promise.resolve();
 };
 
 export const Newsletter = () => {
@@ -34,12 +43,9 @@ export const Newsletter = () => {
 
         <Form.Item
             name="email"
-            rules={[{ required: true, message: 'Preencha com um e-mail válido' }]}
+            rules={[{ validator: placeValidator }]}
             >
-                <div className="aaaaaaaaaaaaa">
-
             <Input placeholder="Digite seu email" />
-                </div>
         </Form.Item>
             <div className="button">
             <Button type="primary" htmlType="submit">

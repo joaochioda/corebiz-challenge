@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.button`
-    // background: url(${props => props.image}) no-repeat left center;
+    cursor: pointer;
     background-color: ${props => props.theme.colors.white};
     img {
         margin-right: 15px;

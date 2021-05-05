@@ -14,6 +14,9 @@ export const Container = styled.footer`
 
     }
     .logos {
+        img {
+            cursor: pointer;
+        }
         display: flex;
         justify-content: center;
         

@@ -1,10 +1,9 @@
 import React from 'react';
 import { Container } from './style';
-import SearchIcon from '../../../assets/SearchIcon.svg';
 
 export const Search = () => (
     <Container>
-        <input placeholder="O que está procurando?"/>
-        <img src={SearchIcon} alt="Icone busca"/>
+        <input className="input" placeholder="O que está procurando?" type="text"/>
+        <div className="icon"/>
     </Container>
 );
