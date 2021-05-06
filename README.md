@@ -31,5 +31,5 @@ Run the project
 ## Run tests
 
 ```bash
-  npm run start
+  npm run test
 ```
