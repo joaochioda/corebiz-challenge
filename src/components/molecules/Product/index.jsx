@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Container, OffImageAbsolute } from './style';
-import { Rate } from 'antd';
+import { Rate, message } from 'antd';
 import { saveLocalStorage } from '../../functions/localStorage';
 import { useCartContext } from '../../contexts/CartContext';
+import PropTypes from 'prop-types';
 
-export const Product = ({product}) => {
+export const Product = ({ product }) => {
     const [selected, setSelected] = useState(false);
     const { changecartCount } = useCartContext();
 
@@ -13,6 +14,7 @@ export const Product = ({product}) => {
     }
 
     function handleClick () {
+        message.success('Produto adicionado ao carrinho');
         changecartCount();
         saveLocalStorage(product.productName)
     }
@@ -46,3 +48,7 @@ export const Product = ({product}) => {
             </div>
         </Container>
 )}
+
+Product.propTypes = {
+    products: PropTypes.element,
+}

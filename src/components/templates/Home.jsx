@@ -4,10 +4,8 @@ import { CarrouselBanner } from '../molecules/CarrouselBanner';
 import { CarrouselProducts } from '../molecules/CarrouselProducts';
 import { Newsletter } from '../molecules/Newsletter';
 
-
 function Home() {
-
-  const { products, error, loading } = useProducts();
+  const { products, loading } = useProducts();
   return (
     <div>
       <CarrouselBanner/>

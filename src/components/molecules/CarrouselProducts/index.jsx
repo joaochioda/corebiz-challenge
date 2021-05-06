@@ -4,6 +4,7 @@ import Slider from "react-slick";
 import { Product } from '../Product';
 import { TextBorder } from '../../atoms/TextBorder';
 import { Spin } from 'antd';
+import PropTypes from 'prop-types';
 
 export const CarrouselProducts = ({ products, loading }) => {
     const settings = {
@@ -50,3 +51,8 @@ export const CarrouselProducts = ({ products, loading }) => {
         </Slider>
     </Container>
 )};
+
+CarrouselProducts.propTypes = {
+    products: PropTypes.array.isRequired,
+    loading: PropTypes.bool.isRequired,
+}
