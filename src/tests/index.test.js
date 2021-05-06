@@ -1,17 +1,13 @@
 import React from "react";
-import {
-  render,
-  fireEvent,
-  waitForElement,
-  screen,
-} from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { TextBorder } from "../components/atoms/TextBorder";
 import { OffImage } from "../components/atoms/OffImage";
 import { TextBanner } from "../components/atoms/TextBanner";
 import { Header } from "../components/organisms/Header";
 import { Footer } from "../components/organisms/Footer";
+import { Product } from "../components/molecules/Product";
 import Theme from "../styles/theme";
-
 import { CartContextProvider } from "../components/contexts/CartContext";
 
 describe("Rendering atoms components", () => {
@@ -73,6 +69,36 @@ describe("Testing localstorage", () => {
       expect(screen.getByAltText("logos")).toBeInTheDocument();
       expect(container).toHaveTextContent("ENTRE EM CONTATO");
       expect(container).toHaveTextContent("FALE COM O NOSSO CONSULTOR ONLINE");
+    });
+  });
+
+  describe("Testing Product click", () => {
+    const product = {
+      productId: 1,
+      productName: "SAPATO FLOATER PRETO",
+      stars: 1,
+      imageUrl: "https://corebiz-test.herokuapp.com/images/product-1.png",
+      listPrice: null,
+      price: 25990,
+      installments: [
+        {
+          quantity: 9,
+          value: 2887,
+        },
+      ],
+    };
+
+    it("should not render button comprar", () => {
+      render(<Product product={product} />);
+      expect(screen.getByText("COMPRAR")).not.toBeVisible();
+    });
+
+    it("should render button comprar when click(mobile)", async () => {
+      const { getByText, container } = render(<Product product={product} />);
+      const area = getByText("SAPATO FLOATER PRETO");
+      expect(container.getElementsByClassName("selected false").length).toBe(1);
+      userEvent.click(area);
+      expect(container.getElementsByClassName("selected true").length).toBe(1);
     });
   });
 });
