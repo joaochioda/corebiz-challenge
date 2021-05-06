@@ -12,6 +12,7 @@ export const OffImageAbsolute = styled(OffImage)`
 `
 
 export const Container = styled.div`
+    padding: 5px;
     font-family: 'Nunito';
     display:flex;
     flex-direction: column;
