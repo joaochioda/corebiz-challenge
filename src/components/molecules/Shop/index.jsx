@@ -2,11 +2,14 @@ import React from 'react';
 import { Container } from './style';
 import { Badge } from 'antd';
 import ShopIcon from '../../../assets/ShopIcon.svg';
+import { useCartContext } from '../../contexts/CartContext';
 
-export const Shop = () => (
+export const Shop = () => {
+    const { cartCount } = useCartContext();
+   return  (
     <Container>
-        <Badge count={5} size="small" offset={[10, 10]} >
+        <Badge count={cartCount} size="small" offset={[10, 10]} >
             <img src={ShopIcon} alt="Carrinho"/>
         </Badge>
     </Container>
-);
+)};

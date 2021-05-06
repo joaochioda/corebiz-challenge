@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Background } from './style';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button } from 'antd';
 
 const layout = {
     labelCol: { span: 8 },

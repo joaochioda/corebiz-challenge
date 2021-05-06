@@ -1,11 +1,9 @@
 import React from 'react';
 import { Container } from './style';
-
+import { TextBorder } from '../../atoms/TextBorder';
 export const Localization = () => (
     <Container>
-        <div className="localization">
-            <span>Localização</span>
-        </div>
+        <TextBorder text={'Localização'} borderColor={'white'}/>
         <ul>
             <li>
                 Avenida Andrômeda, 2000. Bloco 6 e 8
