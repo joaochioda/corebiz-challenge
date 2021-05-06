@@ -1,6 +1,7 @@
-import React from 'react';
-import { Container, Background } from './style';
+import React, { useState } from 'react';
+import { Container, Background, SuccessContainer } from './style';
 import { Form, Input, Button } from 'antd';
+import postNewsletter from '../../service/postNewsletter';
 
 const layout = {
     labelCol: { span: 8 },
@@ -20,11 +21,16 @@ const placeValidator = (_, value) => {
 };
 
 export const Newsletter = () => {
-    const onFinish = (values) => {
-        console.log('Success:', values);
+    const [post, setPost] = useState(false);
+
+    const onFinish = async ({name, email}) => {
+        const result = await postNewsletter(name, email);
+        if (result.status === 200) {
+            setPost(true);
+        }
       };
-    return (
-    <Background>
+
+      const renderForm = () => (
         <Container>
         <span>Participe de nossas news com promoções e novidades!</span>
         <Form
@@ -32,7 +38,6 @@ export const Newsletter = () => {
         name="basic"
         initialValues={{ remember: true }}
         onFinish={onFinish}
-        //   onFinishFailed={onFinishFailed}
         >
         <Form.Item
             name="name"
@@ -40,7 +45,7 @@ export const Newsletter = () => {
             >
             <Input  placeholder="Digite seu nome" />
         </Form.Item>
-
+    
         <Form.Item
             name="email"
             rules={[{ validator: placeValidator }]}
@@ -55,5 +60,17 @@ export const Newsletter = () => {
             
         </Form>
         </Container>
+    );
+
+    const renderSuccessMessage = () => (
+        <SuccessContainer>
+            <span>Seu e-mail foi cadastrado com sucesso!</span>
+            <span>A partir de agora você receberá as novidades e ofertas exclusivas</span>
+            <button onClick={() => setPost(false)}>Cadastrar novo e-mail</button>
+        </SuccessContainer>
+    )
+    return (
+    <Background>
+        {post ? renderSuccessMessage() : renderForm()}
     </Background>
 )}

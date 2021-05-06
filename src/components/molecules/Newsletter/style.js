@@ -3,12 +3,49 @@ import styled from "styled-components";
 export const Background = styled.div`
     background-color: ${props => props.theme.colors.lightGrey};
 `;
+
+export const SuccessContainer = styled.div`
+    font-family: 'Lato';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 17px 20px 17px;
+    max-width: 1200px;
+    margin: auto;
+    span:first-child {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 14px;
+    }
+    span:last-child {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 12px;
+    }
+    button {
+        margin-top: 15px;
+        color: white;
+        background: black;
+        width: 328px;
+        height: 48px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 14px;
+        cursor: pointer;
+    }
+`;
+
 export const Container = styled.div`
- padding: 24px 17px 0 17px;
+ padding: 24px 17px 20px 17px;
  max-width: 1200px;
  margin: auto;
  @media(min-width: 800px) {
     padding-bottom: 20px;
+}
+span {
+    display: flex;
+    justify-content: center;
 }
  font-family: 'Lato';
     background-color: ${props => props.theme.colors.lightGrey};
