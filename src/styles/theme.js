@@ -9,8 +9,8 @@ const theme = {
     darkGrey: "#7A7A7A",
     placeHolderGrey: "#7A7A7A",
     white: "#FFFFFF",
-    red: '#F8475F',
-    third: '##333333'
+    red: "#F8475F",
+    third: "##333333",
   },
   fonts: ["Nunito", "RoboLatoto"],
   fontSizes: {
@@ -24,9 +24,9 @@ const theme = {
     size45: "45px",
   },
   lineHeight: {
-    size17: '17.73px',
-    size20: '20px',
-  }
+    size17: "17.73px",
+    size20: "20px",
+  },
 };
 
 const Theme = ({ children }) => (

@@ -8,17 +8,16 @@ export const Container = styled.div`
     color: red;
   }
   .slick-next {
-    background: url('/ArrowRight.svg') center center no-repeat!important;
+    background: url("/ArrowRight.svg") center center no-repeat !important;
     &::before {
       display: none;
     }
   }
   .slick-prev {
-    background: url('/Arrow.svg') center center no-repeat!important;
+    background: url("/Arrow.svg") center center no-repeat !important;
     &::before {
       display: none;
     }
   }
   margin-bottom: 50px;
-  
 `;

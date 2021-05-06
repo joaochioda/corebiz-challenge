@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Home from './components/templates/Home';
-import 'antd/dist/antd.css';
-import { Header } from '../src/components/organisms/Header';
-import { Footer } from '../src/components/organisms/Footer';
-import { CartContextProvider } from '../src/components/contexts/CartContext';
+import React from "react";
+import ReactDOM from "react-dom";
+import Home from "./components/templates/Home";
+import "antd/dist/antd.css";
+import { Header } from "../src/components/organisms/Header";
+import { Footer } from "../src/components/organisms/Footer";
+import { CartContextProvider } from "../src/components/contexts/CartContext";
 import Theme from "./styles/theme";
 ReactDOM.render(
   <React.StrictMode>
@@ -16,7 +16,7 @@ ReactDOM.render(
       </CartContextProvider>
     </Theme>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

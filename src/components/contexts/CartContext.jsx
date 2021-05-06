@@ -1,7 +1,5 @@
-import {
-  React, createContext, useState, useContext,
-} from 'react';
-import { getLocalStorage } from '../functions/localStorage';
+import { React, createContext, useState, useContext } from "react";
+import { getLocalStorage } from "../functions/localStorage";
 
 export const CartContext = createContext({});
 
