@@ -6,9 +6,10 @@ export function getLocalStorage() {
   var values = [],
     keys = Object.keys(localStorage),
     i = keys.length;
-
   while (i--) {
-    values.push(localStorage.getItem(keys[i]));
+    if (new Date(parseInt(keys[i])).getTime() > 0) {
+      values.push(localStorage.getItem(keys[i]));
+    }
   }
   return values;
 }

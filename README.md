@@ -33,3 +33,7 @@ Run the project
 ```bash
   npm run test
 ```
+
+## Final result (mobile)
+
+![mobile](https://user-images.githubusercontent.com/47106171/117369145-e54a9900-ae9a-11eb-9aa6-d0cfc6442470.gif)
