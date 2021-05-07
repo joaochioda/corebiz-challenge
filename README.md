@@ -1,4 +1,5 @@
-# Getting Started
+## Technologies
+React + Styled Component + Ant Design + react testing library
 
 ## Download the project
 
