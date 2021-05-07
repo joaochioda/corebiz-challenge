@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  color: white;
+  color: ${(props) => props.theme.colors.white};
   font-family: "Nunito";
   p:first-child {
     font-size: 20px;

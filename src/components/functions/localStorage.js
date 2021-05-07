@@ -1,5 +1,11 @@
 export function saveLocalStorage(value) {
-  localStorage.setItem(Date.now(), JSON.stringify(value));
+  localStorage.setItem(`keyshop=${Date.now()}`, JSON.stringify(value));
+}
+
+function validateIfIsKeyShop(string) {
+  const indexMatch = string.search("keyshop=");
+  const keyShopLength = "keyshop=".length;
+  return string.substring(indexMatch + keyShopLength, string.length) > 0;
 }
 
 export function getLocalStorage() {
@@ -7,7 +13,9 @@ export function getLocalStorage() {
     keys = Object.keys(localStorage),
     i = keys.length;
   while (i--) {
-    if (new Date(parseInt(keys[i])).getTime() > 0) {
+    validateIfIsKeyShop(keys[i]);
+
+    if (validateIfIsKeyShop(keys[i]) > 0) {
       values.push(localStorage.getItem(keys[i]));
     }
   }

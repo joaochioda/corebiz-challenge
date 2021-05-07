@@ -13,7 +13,7 @@ export const Container = styled.div`
   .off {
     font-size: 16px;
     font-family: "Nunito";
-    color: white;
+    color: ${(props) => props.theme.colors.white};
     font-weight: 900;
     position: absolute;
     top: 15px;

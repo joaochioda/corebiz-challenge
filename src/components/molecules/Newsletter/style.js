@@ -24,8 +24,8 @@ export const SuccessContainer = styled.div`
   }
   button {
     margin-top: 15px;
-    color: white;
-    background: black;
+    color: ${(props) => props.theme.colors.white};
+    background: ${(props) => props.theme.colors.white};
     width: 328px;
     height: 48px;
     border-radius: 5px;
@@ -77,7 +77,7 @@ export const Container = styled.div`
       align-items: center;
     }
     button {
-      background: black;
+      background: ${(props) => props.theme.colors.black};
       width: 280px;
       border-radius: 5px;
     }

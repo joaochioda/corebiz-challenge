@@ -63,7 +63,7 @@ export const Container = styled.div`
   .button {
     font-weight: 700;
     font-size: 12px;
-    color: white;
+    color: ${(props) => props.theme.colors.white};
     background: #000000;
     border-radius: 5px;
     width: 125px;
@@ -88,7 +88,7 @@ export const Container = styled.div`
       }
     }
     .selected.false {
-      background: white;
+      background: ${(props) => props.theme.colors.white};
       .button {
         display: none;
       }
